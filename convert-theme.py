@@ -4,6 +4,7 @@
 
 from os import listdir
 import argparse
+import os
 
 parser = argparse.ArgumentParser()
 
@@ -21,16 +22,26 @@ for file in listdir(args.path):
 with open(args.path + '/' + theme_filename, encoding='utf8', errors='ignore') as theme_file:
     theme = theme_file.read()
 
-print (theme)
+# print (theme)
+
+# Create an images directory.
+if not os.path.exists('images'):
+    os.makedirs('images')
+
+# Parse the theme variables.
+wallpaper = ''
+for line in theme.split('\n'):
+    line.replace('ThemeDir', args.path + '/')
+    if line.startswith('Wallpaper='):
+        wallpaper = line.split('=')[1]
+        break
+
+print(wallpaper)
 
 # Generate the HTML output.
-output = '<html>\n'
-output += '<head>\n'
-output += '<title>' + theme_filename.replace('.Theme', '') + '</title>\n'
-output += '</head>\n'
-output += '<body>\n'
-output += '</body>\n'
-output += '</html>\n'
+with open('template.html', 'r') as template_file:
+    template = template_file.read()
+    template = template.replace('%title%', theme_filename.replace('.Theme', ''))
 
 # Print HTML output.
-print (output)
+print (template)
