@@ -32,6 +32,9 @@ if not os.path.exists('images'):
 
 # Parse the theme variables.
 wallpaper = ''
+computer_icon = ''
+network_icon = ''
+bin_icon = ''
 
 colors = {
     'Hilight': '',
@@ -60,6 +63,13 @@ for line in theme.split('\n'):
         # Replace Windows backslashes with Unix forward slashes.
         wallpaper = wallpaper.replace('\\', '/')
 
+    if line.startswith('empty='):
+        bin_icon = line.split('=')[1].split(',')[0]
+        # Replace the %ThemeDir% variable with the theme's path.
+        bin_icon = bin_icon.replace('%ThemeDir%', args.path + '/')
+        # Replace Windows backslashes with Unix forward slashes.
+        bin_icon = bin_icon.replace('\\', '/')
+
     # Loop through colors and find a match.
     for key in colors:
         if line.startswith(key + '='):
@@ -67,6 +77,9 @@ for line in theme.split('\n'):
 
 # Copy the wallpaper to the images directory.
 os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
+
+# Copy the bin icon to the images directory.
+os.system('cp "' + bin_icon + '" images/bin.ico')
 
 # Generate the HTML output.
 with open('template.html', 'r') as template_file:
