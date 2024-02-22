@@ -10,6 +10,13 @@ def rgbToHex(rgb):
     colors = rgb.split(' ')
     return '#%02x%02x%02x' % (int(colors[0]), int(colors[1]), int(colors[2]))
 
+def cleanUpThemePath(path):
+    # Replace the %ThemeDir% variable with the theme's path.
+    path = path.replace('%ThemeDir%', args.path + '/')
+    # Replace Windows backslashes with Unix forward slashes.
+    path = path.replace('\\', '/')
+    return path
+
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-p', '--path', type=str, required=True, help='the path containing the .Theme file')
@@ -57,18 +64,10 @@ colors = {
 
 for line in theme.split('\n'):
     if line.startswith('Wallpaper='):
-        wallpaper = line.split('=')[1]
-        # Replace the %ThemeDir% variable with the theme's path.
-        wallpaper = wallpaper.replace('%ThemeDir%', args.path + '/')
-        # Replace Windows backslashes with Unix forward slashes.
-        wallpaper = wallpaper.replace('\\', '/')
+        wallpaper = cleanUpThemePath(line.split('=')[1])
 
     if line.startswith('empty='):
-        bin_icon = line.split('=')[1].split(',')[0]
-        # Replace the %ThemeDir% variable with the theme's path.
-        bin_icon = bin_icon.replace('%ThemeDir%', args.path + '/')
-        # Replace Windows backslashes with Unix forward slashes.
-        bin_icon = bin_icon.replace('\\', '/')
+        bin_icon = cleanUpThemePath(line.split('=')[1].split(',')[0])
 
     # Loop through colors and find a match.
     for key in colors:
