@@ -15,7 +15,7 @@ Live demos:
 ## Usage
 
 Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes).
-[This Windows XP theme](https://archive.org/details/nikev1) works well.
+[OS2 Warp theme](https://archive.org/details/theme_os2_warp_202005) works well.
 [Inside Your Computer](https://archive.org/details/inside_201808) is a good one,
 just make sure you note the caveats below.
 
@@ -43,8 +43,6 @@ to see the results of your desktop theme conversion.
 * [Star Wars Episode 1](https://archive.org/details/sw1_202005)
 * [Tent Camping](https://archive.org/details/camping_202005)
 * [The Abyss](https://archive.org/details/abyss-x3)
-* [Windows XP](https://archive.org/details/nikev1)
-* [X-Files](https://archive.org/details/win95_Xfiles_202005)
 
 ## Caveats
 
