@@ -33,6 +33,8 @@ if not os.path.exists('images'):
 
 # Parse the theme variables.
 wallpaper = ''
+window_background = ''
+inactive_border = ''
 inactive_title_background = ''
 inactive_title_color = ''
 for line in theme.split('\n'):
@@ -42,6 +44,14 @@ for line in theme.split('\n'):
         wallpaper = wallpaper.replace('%ThemeDir%', args.path + '/')
         # Replace Windows backslashes with Unix forward slashes.
         wallpaper = wallpaper.replace('\\', '/')
+    if line.startswith('Menu='):
+        # Parse the window background.
+        rgb = line.split('=')[1].split(' ')
+        window_background = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
+    if line.startswith('InactiveBorder='):
+        # Parse the inactive title background.
+        rgb = line.split('=')[1].split(' ')
+        inactive_border = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
     if line.startswith('InactiveTitle='):
         # Parse the inactive title background.
         rgb = line.split('=')[1].split(' ')
@@ -58,6 +68,8 @@ os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
 with open('template.html', 'r') as template_file:
     template = template_file.read()
     template = template.replace('%title%', theme_filename.replace('.Theme', ''))
+    template = template.replace('%window_background%', window_background)
+    template = template.replace('%inactive_border%', inactive_border)
     template = template.replace('%inactive_title_background%', inactive_title_background)
     template = template.replace('%inactive_title_color%', inactive_title_color)
 

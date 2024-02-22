@@ -15,11 +15,20 @@
             position: absolute;
         }
 
+        #windows .inactive .content, #windows .active .content, #windows .message .content {
+            border: 2px solid;
+        }
+
         #windows .inactive {
+            background-color: %window_background%;
             height: 300px;
             top: 50px;
             right: 50px;
             width: 400px;
+        }
+
+        #windows .inactive .content {
+            border-color: %inactive_border%;
         }
 
         #windows .inactive .title {
@@ -33,13 +42,19 @@
     <section id="desktop">
         <section id="windows">
             <div class="inactive">
-                <span class="title">Inactive Window</span>
+                <div class="content">
+                    <span class="title">Inactive Window</span>
+                </div>
             </div>
             <div class="active">
-                <span class="title">Active Window</span>
+                <div class="content">
+                    <span class="title">Active Window</span>
+                </div>
             </div>
             <div class="message">
-                <span class="title">Message Box</span>
+                <div class="content">
+                    <span class="title">Message Box</span>
+                </div>
             </div>
         </section>
     </section>
