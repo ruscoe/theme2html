@@ -27,11 +27,13 @@ to see the results of your desktop theme conversion.
 
 ## Supported features
 
-* :white_check_mark: Desktop wallpaper
-* :red_circle: Icons
-* :red_circle: Window colors
-* :red_circle: Fonts
-* :red_circle: Sounds
+| Feature   | Completion |
+|-----------|------------|
+| Wallpaper | Full       |
+| Icons     | None       |
+| Colors    | Partial    |
+| Fonts     | None       |
+| Sounds    | None       |
 
 ## Caveats
 
