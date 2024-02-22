@@ -34,7 +34,9 @@ if not os.path.exists('images'):
 
 # Parse the theme variables.
 wallpaper = ''
-window_background = ''
+window = ''
+window_text = ''
+menu = ''
 active_border = ''
 active_title_background = ''
 active_title = ''
@@ -48,9 +50,15 @@ for line in theme.split('\n'):
         wallpaper = wallpaper.replace('%ThemeDir%', args.path + '/')
         # Replace Windows backslashes with Unix forward slashes.
         wallpaper = wallpaper.replace('\\', '/')
-    if line.startswith('Menu='):
+    if line.startswith('Window='):
         # Parse the window background color.
-        window_background = rgbToHex(line.split('=')[1])
+        window = rgbToHex(line.split('=')[1])
+    if line.startswith('WindowText='):
+        # Parse the window text color.
+        window_text = rgbToHex(line.split('=')[1])
+    if line.startswith('Menu='):
+        # Parse the menu background color.
+        menu = rgbToHex(line.split('=')[1])
     if line.startswith('ActiveBorder='):
         # Parse the active border background color.
         active_border = rgbToHex(line.split('=')[1])
@@ -77,7 +85,9 @@ os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
 with open('template.html', 'r') as template_file:
     template = template_file.read()
     template = template.replace('%title%', theme_filename.replace('.Theme', ''))
-    template = template.replace('%window_background%', window_background)
+    template = template.replace('%window%', window)
+    template = template.replace('%window_text%', window_text)
+    template = template.replace('%menu%', menu)
     template = template.replace('%active_border%', active_border)
     template = template.replace('%active_title_background%', active_title_background)
     template = template.replace('%active_title%', active_title)
