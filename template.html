@@ -37,6 +37,16 @@
             display: block;
         }
 
+        #windows .active .menu {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #windows .active .menu li {
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+
         #windows .inactive {
             background-color: %window_background%;
             top: 50px;
@@ -67,11 +77,21 @@
             <div class="active">
                 <div class="content">
                     <span class="title">Active Window</span>
+                    <ul class="menu">
+                        <li>Normal</li>
+                        <li class="disabled">Disabled</li>
+                        <li class="selected">Selected</li>
+                    </ul>
+                    <div class="text">
+                        Window Text
+                    </div>
                 </div>
             </div>
             <div class="message">
                 <div class="content">
                     <span class="title">Message Box</span>
+                    <span class="text">Message Text</span>
+                    <span class="button">Button Text</span>
                 </div>
             </div>
         </section>
