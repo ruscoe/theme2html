@@ -71,3 +71,8 @@ running the conversion script.
 ## License
 
 [MIT](https://mit-license.org)
+
+## The Internet Archive
+
+This project is possible because of the Internet Archive. If you enjoy it, please
+consider [making a donation](https://archive.org/donate).
