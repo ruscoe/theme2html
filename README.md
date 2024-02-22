@@ -2,15 +2,23 @@
 
 Converts a Microsoft Plus desktop theme into a HTML page.
 
-This is a classic example of wondering if one could without wondering if
-one should.
+## Demo
+
+Live demos:
+
+* [Inside Your Computer](https://ruscoe.org/theme2html/inside)
+* [OS2 Warp](https://ruscoe.org/theme2html/os2/)
+* [The Abyss](https://ruscoe.org/theme2html/abyss/)
 
 ## Usage
 
-Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes). [Inside Your Computer](https://archive.org/details/inside_201808) is a good one, just make sure you note the caveats below.
+Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes).
+[This Windows XP theme](https://archive.org/details/nikev1) works well.
+[Inside Your Computer](https://archive.org/details/inside_201808) is a good one,
+just make sure you note the caveats below.
 
 Extract the .Theme file and its associated directory somewhere locally. It should
-look like this:
+look similar to this:
 
 ```
 'Inside Your Computer'
@@ -25,19 +33,15 @@ the following:
 This will create a HTML file named `output.html`. Open this file in your web browser
 to see the results of your desktop theme conversion.
 
-## Supported features
+## Tested themes
 
-| Feature   | Completion |
-|-----------|------------|
-| Wallpaper | Full       |
-| Icons     | None       |
-| Colors    | Partial    |
-| Fonts     | None       |
-| Sounds    | None       |
+[Airwolf](https://archive.org/details/airwolf_202004)
+[Charlie and the Chocolate Factory](https://archive.org/details/chchocmv)
+[The Abyss](https://archive.org/details/abyss-x3)
+[Windows XP](https://archive.org/details/nikev1)
+[OS2 Warp](https://archive.org/details/theme_os2_warp_202005)
 
 ## Caveats
-
-This script has only been tested with Python 3.10.12 on Ubuntu Linux.
 
 ### Capitalization in file paths
 
@@ -51,8 +55,19 @@ Plus, the wallpaper path is given as:
 
 `%ThemeDir%Inside your Computer\Inside your Computer Wallpaper.jpg`
 
-This is wrong because the actual path includes a **capital Y** in **your**:
+The actual path includes a **capital Y** in **your** and so should be:
 
 `%ThemeDir%Inside Your Computer\Inside your Computer Wallpaper.jpg`
 
-If you see this in a .Theme file, just change it to match the correct path.
+If you see this in a .Theme file, change it to match the correct path before
+running the conversion script.
+
+### Others
+
+* This script will not work if the .Theme file is in the same directory as the theme assets.
+* This script has only been tested with Python 3.10.12 on Ubuntu Linux.
+* Icons and fonts haven't been implemented yet.
+
+## License
+
+[MIT](https://mit-license.org)
