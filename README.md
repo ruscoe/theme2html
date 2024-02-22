@@ -15,7 +15,7 @@ Live demos:
 ## Usage
 
 Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes).
-[OS2 Warp theme](https://archive.org/details/theme_os2_warp_202005) works well.
+[This OS2 Warp theme](https://archive.org/details/theme_os2_warp_202005) works well.
 [Inside Your Computer](https://archive.org/details/inside_201808) is a good one,
 just make sure you note the caveats below.
 
