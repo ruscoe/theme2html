@@ -35,6 +35,9 @@ if not os.path.exists('images'):
 # Parse the theme variables.
 wallpaper = ''
 window_background = ''
+active_border = ''
+active_title_background = ''
+active_title = ''
 inactive_border = ''
 inactive_title_background = ''
 inactive_title = ''
@@ -46,13 +49,22 @@ for line in theme.split('\n'):
         # Replace Windows backslashes with Unix forward slashes.
         wallpaper = wallpaper.replace('\\', '/')
     if line.startswith('Menu='):
-        # Parse the window background.
+        # Parse the window background color.
         window_background = rgbToHex(line.split('=')[1])
+    if line.startswith('ActiveBorder='):
+        # Parse the active border background color.
+        active_border = rgbToHex(line.split('=')[1])
+    if line.startswith('ActiveTitle='):
+        # Parse the active title background color.
+        active_title_background = rgbToHex(line.split('=')[1])
+    if line.startswith('TitleText='):
+        # Parse the active title color.
+        active_title = rgbToHex(line.split('=')[1])
     if line.startswith('InactiveBorder='):
-        # Parse the inactive title background.
+        # Parse the inactive border background color.
         inactive_border = rgbToHex(line.split('=')[1])
     if line.startswith('InactiveTitle='):
-        # Parse the inactive title background.
+        # Parse the inactive title background color.
         inactive_title_background = rgbToHex(line.split('=')[1])
     if line.startswith('InactiveTitleText='):
         # Parse the inactive title color.
@@ -66,6 +78,9 @@ with open('template.html', 'r') as template_file:
     template = template_file.read()
     template = template.replace('%title%', theme_filename.replace('.Theme', ''))
     template = template.replace('%window_background%', window_background)
+    template = template.replace('%active_border%', active_border)
+    template = template.replace('%active_title_background%', active_title_background)
+    template = template.replace('%active_title%', active_title)
     template = template.replace('%inactive_border%', inactive_border)
     template = template.replace('%inactive_title_background%', inactive_title_background)
     template = template.replace('%inactive_title%', inactive_title)

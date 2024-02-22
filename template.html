@@ -19,16 +19,34 @@
             border: 2px solid;
         }
 
+        #windows .active {
+            background-color: %window_background%;
+            top: 100px;
+            right: 75px;
+        }
+
+        #windows .active .content {
+            border-color: %active_border%;
+            height: 300px;
+            width: 400px;
+        }
+
+        #windows .active .title {
+            background-color: %active_title_background%;
+            color: %active_title%;
+            display: block;
+        }
+
         #windows .inactive {
             background-color: %window_background%;
-            height: 300px;
             top: 50px;
             right: 50px;
-            width: 400px;
         }
 
         #windows .inactive .content {
             border-color: %inactive_border%;
+            height: 300px;
+            width: 400px;
         }
 
         #windows .inactive .title {
