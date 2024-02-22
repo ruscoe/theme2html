@@ -6,8 +6,9 @@ from os import listdir
 import argparse
 import os
 
-def rgbToHex(r, g, b):
-    return '#%02x%02x%02x' % (r, g, b)
+def rgbToHex(rgb):
+    colors = rgb.split(' ')
+    return '#%02x%02x%02x' % (int(colors[0]), int(colors[1]), int(colors[2]))
 
 parser = argparse.ArgumentParser()
 
@@ -46,20 +47,16 @@ for line in theme.split('\n'):
         wallpaper = wallpaper.replace('\\', '/')
     if line.startswith('Menu='):
         # Parse the window background.
-        rgb = line.split('=')[1].split(' ')
-        window_background = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
+        window_background = rgbToHex(line.split('=')[1])
     if line.startswith('InactiveBorder='):
         # Parse the inactive title background.
-        rgb = line.split('=')[1].split(' ')
-        inactive_border = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
+        inactive_border = rgbToHex(line.split('=')[1])
     if line.startswith('InactiveTitle='):
         # Parse the inactive title background.
-        rgb = line.split('=')[1].split(' ')
-        inactive_title_background = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
+        inactive_title_background = rgbToHex(line.split('=')[1])
     if line.startswith('InactiveTitleText='):
         # Parse the inactive title color.
-        rgb = line.split('=')[1].split(' ')
-        inactive_title_color = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
+        inactive_title_color = rgbToHex(line.split('=')[1])
 
 # Copy the wallpaper to the images directory.
 os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
