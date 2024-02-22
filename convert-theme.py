@@ -62,12 +62,22 @@ colors = {
     'GrayText': '',
 }
 
+next_line_is_computer_icon = False
+next_line_is_network_icon = False
+
 for line in theme.split('\n'):
+    if next_line_is_computer_icon:
+        computer_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
+        next_line_is_computer_icon = False
+
     if line.startswith('Wallpaper='):
         wallpaper = cleanUpThemePath(line.split('=')[1])
 
     if line.startswith('empty='):
-        bin_icon = cleanUpThemePath(line.split('=')[1].split(',')[0])
+        bin_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
+
+    if line.startswith('[CLSID\{20D04FE0-3AEA-1069-A2D8'):
+        next_line_is_computer_icon = True
 
     # Loop through colors and find a match.
     for key in colors:
@@ -77,8 +87,13 @@ for line in theme.split('\n'):
 # Copy the wallpaper to the images directory.
 os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
 
-# Copy the bin icon to the images directory.
-os.system('cp "' + bin_icon + '" images/bin.ico')
+# Copy the Recycle Bin icon to the images directory.
+if bin_icon:
+    os.system('cp "' + bin_icon + '" images/bin.ico')
+
+# Copy the My Computer icon to the images directory.
+if computer_icon:
+    os.system('cp "' + computer_icon + '" images/computer.ico')
 
 # Generate the HTML output.
 with open('template.html', 'r') as template_file:
