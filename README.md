@@ -7,7 +7,7 @@ one should.
 
 ## Usage
 
-Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes). [Inside Your Computer](https://archive.org/details/inside_201808) is a good one.
+Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes). [Inside Your Computer](https://archive.org/details/inside_201808) is a good one, just make sure you note the caveats below.
 
 Extract the .Theme file and its associated directory somewhere locally. It should
 look like this:
