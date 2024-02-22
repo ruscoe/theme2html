@@ -35,11 +35,11 @@ to see the results of your desktop theme conversion.
 
 ## Tested themes
 
-[Airwolf](https://archive.org/details/airwolf_202004)
-[Charlie and the Chocolate Factory](https://archive.org/details/chchocmv)
-[The Abyss](https://archive.org/details/abyss-x3)
-[Windows XP](https://archive.org/details/nikev1)
-[OS2 Warp](https://archive.org/details/theme_os2_warp_202005)
+* [Airwolf](https://archive.org/details/airwolf_202004)
+* [Charlie and the Chocolate Factory](https://archive.org/details/chchocmv)
+* [The Abyss](https://archive.org/details/abyss-x3)
+* [Windows XP](https://archive.org/details/nikev1)
+* [OS2 Warp](https://archive.org/details/theme_os2_warp_202005)
 
 ## Caveats
 
