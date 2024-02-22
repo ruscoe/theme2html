@@ -10,6 +10,40 @@
             background-size: 100% 100%;
         }
 
+        #icons {
+            left: 30px;
+            position: absolute;
+            top: 60px;
+        }
+
+        #icons div {
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 64px 64px;
+            margin-bottom: 64px;
+            padding-top: 64px;
+        }
+
+        #icons div span {
+            background-color: #000000;
+            color: #ffffff;
+            display: block;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        #icons .computer {
+            background-image: url('');
+        }
+
+        #icons .network {
+            background-image: url('');
+        }
+
+        #icons .bin {
+            background-image: url('');
+        }
+
         #windows {
             position: relative;
         }
@@ -137,6 +171,11 @@
 </head>
 <body>
     <section id="desktop">
+        <section id="icons">
+            <div class="computer"><span>My Computer</span></div>
+            <div class="network"><span>Network Neighborhood</span></div>
+            <div class="bin"><span>Recycle Bin</span></div>
+        </section>
         <section id="windows">
             <div class="inactive">
                 <div class="content">
