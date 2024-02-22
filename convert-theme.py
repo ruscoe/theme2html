@@ -37,7 +37,7 @@ wallpaper = ''
 window_background = ''
 inactive_border = ''
 inactive_title_background = ''
-inactive_title_color = ''
+inactive_title = ''
 for line in theme.split('\n'):
     if line.startswith('Wallpaper='):
         wallpaper = line.split('=')[1]
@@ -56,7 +56,7 @@ for line in theme.split('\n'):
         inactive_title_background = rgbToHex(line.split('=')[1])
     if line.startswith('InactiveTitleText='):
         # Parse the inactive title color.
-        inactive_title_color = rgbToHex(line.split('=')[1])
+        inactive_title = rgbToHex(line.split('=')[1])
 
 # Copy the wallpaper to the images directory.
 os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
@@ -68,7 +68,5 @@ with open('template.html', 'r') as template_file:
     template = template.replace('%window_background%', window_background)
     template = template.replace('%inactive_border%', inactive_border)
     template = template.replace('%inactive_title_background%', inactive_title_background)
-    template = template.replace('%inactive_title_color%', inactive_title_color)
-
-# Print HTML output.
+    template = template.replace('%inactive_title%', inactive_title)
 print (template)
