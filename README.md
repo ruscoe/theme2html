@@ -46,8 +46,8 @@ Linux does, however. If you have a .Theme file that contains lower case paths an
 the files are in upper case directories, you'll have to modify the .Theme file
 before running the converter.
 
-For example, the "Inside Your Computer" desktop theme that ships with Microsoft Plus,
-the wallpaper path is given as:
+For example, in the "Inside Your Computer" desktop theme that ships with Microsoft
+Plus, the wallpaper path is given as:
 
 `%ThemeDir%Inside your Computer\Inside your Computer Wallpaper.jpg`
 
