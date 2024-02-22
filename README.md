@@ -25,6 +25,14 @@ the following:
 This will create a HTML file named `output.html`. Open this file in your web browser
 to see the results of your desktop theme conversion.
 
+## Supported features
+
+[x] Desktop wallpaper
+[ ] Icons
+[ ] Window colors
+[ ] Fonts
+[ ] Sounds
+
 ## Caveats
 
 This script has only been tested with Python 3.10.12 on Ubuntu Linux.
