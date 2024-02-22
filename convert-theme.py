@@ -19,14 +19,12 @@ args = parser.parse_args()
 # Find the .Theme file.
 theme_filename = ''
 for file in listdir(args.path):
-    if file.endswith('.Theme'):
+    if file.endswith('.Theme') or file.endswith('.theme'):
         theme_filename = file
 
 # Open the .Theme file.
 with open(args.path + '/' + theme_filename, encoding='utf8', errors='ignore') as theme_file:
     theme = theme_file.read()
-
-# print (theme)
 
 # Create an images directory.
 if not os.path.exists('images'):
@@ -34,15 +32,26 @@ if not os.path.exists('images'):
 
 # Parse the theme variables.
 wallpaper = ''
-window = ''
-window_text = ''
-menu = ''
-active_border = ''
-active_title_background = ''
-active_title = ''
-inactive_border = ''
-inactive_title_background = ''
-inactive_title = ''
+
+colors = {
+    'Hilight': '',
+    'HilightText': '',
+    'Window': '',
+    'WindowText' : '',
+    'WindowFrame' : '',
+    'Menu': '',
+    'ActiveBorder': '',
+    'ActiveTitle': '',
+    'TitleText': '',
+    'InactiveBorder': '',
+    'InactiveTitle': '',
+    'InactiveTitleText' : '',
+    'ButtonFace': '',
+    'ButtonShadow': '',
+    'ButtonHilight': '',
+    'GrayText': '',
+}
+
 for line in theme.split('\n'):
     if line.startswith('Wallpaper='):
         wallpaper = line.split('=')[1]
@@ -50,33 +59,11 @@ for line in theme.split('\n'):
         wallpaper = wallpaper.replace('%ThemeDir%', args.path + '/')
         # Replace Windows backslashes with Unix forward slashes.
         wallpaper = wallpaper.replace('\\', '/')
-    if line.startswith('Window='):
-        # Parse the window background color.
-        window = rgbToHex(line.split('=')[1])
-    if line.startswith('WindowText='):
-        # Parse the window text color.
-        window_text = rgbToHex(line.split('=')[1])
-    if line.startswith('Menu='):
-        # Parse the menu background color.
-        menu = rgbToHex(line.split('=')[1])
-    if line.startswith('ActiveBorder='):
-        # Parse the active border background color.
-        active_border = rgbToHex(line.split('=')[1])
-    if line.startswith('ActiveTitle='):
-        # Parse the active title background color.
-        active_title_background = rgbToHex(line.split('=')[1])
-    if line.startswith('TitleText='):
-        # Parse the active title color.
-        active_title = rgbToHex(line.split('=')[1])
-    if line.startswith('InactiveBorder='):
-        # Parse the inactive border background color.
-        inactive_border = rgbToHex(line.split('=')[1])
-    if line.startswith('InactiveTitle='):
-        # Parse the inactive title background color.
-        inactive_title_background = rgbToHex(line.split('=')[1])
-    if line.startswith('InactiveTitleText='):
-        # Parse the inactive title color.
-        inactive_title = rgbToHex(line.split('=')[1])
+
+    # Loop through colors and find a match.
+    for key in colors:
+        if line.startswith(key + '='):
+            colors[key] = rgbToHex(line.split('=')[1])
 
 # Copy the wallpaper to the images directory.
 os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
@@ -84,14 +71,10 @@ os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
 # Generate the HTML output.
 with open('template.html', 'r') as template_file:
     template = template_file.read()
+
     template = template.replace('%title%', theme_filename.replace('.Theme', ''))
-    template = template.replace('%window%', window)
-    template = template.replace('%window_text%', window_text)
-    template = template.replace('%menu%', menu)
-    template = template.replace('%active_border%', active_border)
-    template = template.replace('%active_title_background%', active_title_background)
-    template = template.replace('%active_title%', active_title)
-    template = template.replace('%inactive_border%', inactive_border)
-    template = template.replace('%inactive_title_background%', inactive_title_background)
-    template = template.replace('%inactive_title%', inactive_title)
+
+    for key in colors:
+        template = template.replace('%' + key + '%', colors[key])
+
 print (template)

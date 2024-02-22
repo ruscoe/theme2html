@@ -3,8 +3,11 @@
     <title>%title%</title>
     <style>
         body {
+            background-color: #000000;
             background-image: url('images/wallpaper.jpg');
-            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
         }
 
         #windows {
@@ -12,38 +15,44 @@
         }
 
         #windows .inactive, #windows .active, #windows .message {
+            border-bottom: 2px solid %WindowFrame%;
+            border-left: 2px solid %ButtonHilight%;
+            border-right: 2px solid %WindowFrame%;
+            border-top: 2px solid %ButtonHilight%;
             position: absolute;
         }
 
         #windows .inactive .content, #windows .active .content, #windows .message .content {
-            border: 2px solid;
+            border: 4px solid;
         }
 
         #windows .inactive .title, #windows .active .title, #windows .message .title {
             font-size: 24px;
+            font-weight: bold;
             padding: 4px 8px 4px 8px;
         }
 
         #windows .active {
-            background-color: %menu%;
+            background-color: %Menu%;
             top: 100px;
             right: 75px;
         }
 
         #windows .active .content {
-            border-color: %active_border%;
+            border-color: %ActiveBorder%;
             width: 400px;
         }
 
         #windows .active .title {
-            background-color: %active_title_background%;
-            color: %active_title%;
+            background-color: %ActiveTitle%;
+            color: %TitleText%;
             display: block;
         }
 
         #windows .active .menu {
             display: flex;
             list-style-type: none;
+            margin: 0;
             padding: 0;
         }
 
@@ -51,29 +60,78 @@
             padding: 4px 8px 4px 8px;
         }
 
+        #windows .active .menu .disabled {
+            color: %GrayText%;
+        }
+
+        #windows .active .menu .selected {
+            background-color: %Hilight%;
+            color: %HilightText%;
+        }
+
         #windows .active .text {
-            background-color: %window%;
-            color: %window_text%;
+            background-color: %Window%;
+            border-left: 2px solid %WindowFrame%;
+            border-top: 2px solid %WindowFrame%;
+            color: %WindowText%;
             height: 230px;
             padding: 8px;
         }
 
         #windows .inactive {
-            background-color: %menu%;
+            background-color: %Menu%;
             top: 50px;
             right: 50px;
         }
 
         #windows .inactive .content {
-            border-color: %inactive_border%;
+            border-color: %InactiveBorder%;
             height: 300px;
             width: 400px;
         }
 
         #windows .inactive .title {
-            background-color: %inactive_title_background%;
-            color: %inactive_title%;
+            background-color: %InactiveTitle%;
+            color: %InactiveTitleText%;
             display: block;
+        }
+
+        #windows .message {
+            background-color: %Menu%;
+            top: 300px;
+            right: 300px;
+        }
+
+        #windows .message .content {
+            border-color: %ActiveBorder%;
+            height: 150px;
+            width: 200px;
+        }
+
+        #windows .message .title, #windows .message .text, #windows .message .button {
+            display: block;
+        }
+
+        #windows .message .title {
+            background-color: %ActiveTitle%;
+            color: %TitleText%;
+        }
+
+        #windows .message .text {
+            padding: 4px 8px 4px 8px;
+        }
+
+        #windows .message .button {
+            background-color: %ButtonFace%;
+            border-bottom: 2px solid %ButtonShadow%;
+            border-left: 2px solid %ButtonHilight%;
+            border-right: 2px solid %ButtonShadow%;
+            border-top: 2px solid %ButtonHilight%;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 20px 0 20px;
+            padding: 8px 16px 8px 16px;
+            text-align: center;
         }
     </style>
 </head>
@@ -102,7 +160,7 @@
                 <div class="content">
                     <span class="title">Message Box</span>
                     <span class="text">Message Text</span>
-                    <span class="button">Button Text</span>
+                    <span class="button">OK</span>
                 </div>
             </div>
         </section>
