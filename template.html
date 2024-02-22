@@ -6,10 +6,42 @@
             background-image: url('images/wallpaper.jpg');
             background-size: cover;
         }
+
+        #windows {
+            position: relative;
+        }
+
+        #windows .inactive, #windows .active, #windows .message {
+            position: absolute;
+        }
+
+        #windows .inactive {
+            height: 300px;
+            top: 50px;
+            right: 50px;
+            width: 400px;
+        }
+
+        #windows .inactive .title {
+            background-color: %inactive_title_background%;
+            color: %inactive_title_color%;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <section id="desktop">
+        <section id="windows">
+            <div class="inactive">
+                <span class="title">Inactive Window</span>
+            </div>
+            <div class="active">
+                <span class="title">Active Window</span>
+            </div>
+            <div class="message">
+                <span class="title">Message Box</span>
+            </div>
+        </section>
     </section>
 </body>
 </html>

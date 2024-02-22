@@ -6,6 +6,9 @@ from os import listdir
 import argparse
 import os
 
+def rgbToHex(r, g, b):
+    return '#%02x%02x%02x' % (r, g, b)
+
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-p', '--path', type=str, required=True, help='the path containing the .Theme file')
@@ -30,6 +33,8 @@ if not os.path.exists('images'):
 
 # Parse the theme variables.
 wallpaper = ''
+inactive_title_background = ''
+inactive_title_color = ''
 for line in theme.split('\n'):
     if line.startswith('Wallpaper='):
         wallpaper = line.split('=')[1]
@@ -37,7 +42,14 @@ for line in theme.split('\n'):
         wallpaper = wallpaper.replace('%ThemeDir%', args.path + '/')
         # Replace Windows backslashes with Unix forward slashes.
         wallpaper = wallpaper.replace('\\', '/')
-        break
+    if line.startswith('InactiveTitle='):
+        # Parse the inactive title background.
+        rgb = line.split('=')[1].split(' ')
+        inactive_title_background = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
+    if line.startswith('InactiveTitleText='):
+        # Parse the inactive title color.
+        rgb = line.split('=')[1].split(' ')
+        inactive_title_color = rgbToHex(int(rgb[0]), int(rgb[1]), int(rgb[2]))
 
 # Copy the wallpaper to the images directory.
 os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
@@ -46,6 +58,8 @@ os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
 with open('template.html', 'r') as template_file:
     template = template_file.read()
     template = template.replace('%title%', theme_filename.replace('.Theme', ''))
+    template = template.replace('%inactive_title_background%', inactive_title_background)
+    template = template.replace('%inactive_title_color%', inactive_title_color)
 
 # Print HTML output.
 print (template)
