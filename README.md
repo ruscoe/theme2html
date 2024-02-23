@@ -10,7 +10,7 @@ Live demos:
 
 * [Inside Your Computer](https://ruscoe.org/theme2html/inside)
 * [OS2 Warp](https://ruscoe.org/theme2html/os2/)
-* [The Abyss](https://ruscoe.org/theme2html/abyss/)
+* [Amiga](https://ruscoe.org/theme2html/amiga/)
 
 ## Usage
 
@@ -43,6 +43,7 @@ to see the results of your desktop theme conversion.
 * [Star Wars Episode 1](https://archive.org/details/sw1_202005)
 * [Tent Camping](https://archive.org/details/camping_202005)
 * [The Abyss](https://archive.org/details/abyss-x3)
+* [Windows XP](https://archive.org/details/theme_xp_pack_202005)
 
 ## Caveats
 
