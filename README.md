@@ -38,6 +38,7 @@ to see the results of your desktop theme conversion.
 ## Tested themes
 
 * [Airwolf](https://archive.org/details/airwolf_202004)
+* [Amiga](https://archive.org/details/amiga_201808)
 * [Charlie and the Chocolate Factory](https://archive.org/details/chchocmv)
 * [OS2 Warp](https://archive.org/details/theme_os2_warp_202005)
 * [Star Wars Episode 1](https://archive.org/details/sw1_202005)
