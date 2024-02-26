@@ -9,8 +9,8 @@ Converts a Microsoft Plus desktop theme into a HTML page.
 Live demos:
 
 * [Inside Your Computer](https://ruscoe.org/theme2html/inside)
+* [Mystery](https://ruscoe.org/theme2html/mystery/)
 * [OS2 Warp](https://ruscoe.org/theme2html/os2/)
-* [Amiga](https://ruscoe.org/theme2html/amiga/)
 
 ## Usage
 
@@ -40,11 +40,13 @@ to see the results of your desktop theme conversion.
 * [Airwolf](https://archive.org/details/airwolf_202004)
 * [Amiga](https://archive.org/details/amiga_201808)
 * [Charlie and the Chocolate Factory](https://archive.org/details/chchocmv)
+* [Mystery](https://archive.org/details/mystery_202005)
 * [OS2 Warp](https://archive.org/details/theme_os2_warp_202005)
 * [Star Wars Episode 1](https://archive.org/details/sw1_202005)
 * [Tent Camping](https://archive.org/details/camping_202005)
 * [The Abyss](https://archive.org/details/abyss-x3)
 * [Windows XP](https://archive.org/details/theme_xp_pack_202005)
+* [X-Files](https://archive.org/details/xfthem15)
 
 ## Caveats
 
