@@ -68,7 +68,7 @@
         #windows .inactive .title, #windows .active .title, #windows .message .title {
             font-size: 24px;
             font-weight: bold;
-            padding: 4px 8px 4px 8px;
+            padding: 4px 3px 4px 8px;
         }
 
         #windows .active {
@@ -85,7 +85,6 @@
         #windows .active .title {
             background-color: %ActiveTitle%;
             color: %TitleText%;
-            display: block;
         }
 
         #windows .active .menu {
@@ -132,7 +131,6 @@
         #windows .inactive .title {
             background-color: %InactiveTitle%;
             color: %InactiveTitleText%;
-            display: block;
         }
 
         #windows .message {
@@ -147,7 +145,7 @@
             width: 200px;
         }
 
-        #windows .message .title, #windows .message .text, #windows .message .button {
+        #windows .message .text, #windows .message .button {
             display: block;
         }
 
@@ -172,6 +170,26 @@
             padding: 8px 16px 8px 16px;
             text-align: center;
         }
+
+        #windows .title {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #windows .window-controls {
+            display: flex;
+        }
+
+        #windows .window-controls div {
+            background-color: %ButtonFace%;
+            border-bottom: 2px solid %ButtonShadow%;
+            border-left: 2px solid %ButtonHilight%;
+            border-right: 2px solid %ButtonShadow%;
+            border-top: 2px solid %ButtonHilight%;
+            height: 24px;
+            margin: 0 1px 0 1px;
+            width: 24px;
+        }
     </style>
 </head>
 <body>
@@ -184,12 +202,26 @@
         <section id="windows">
             <div class="inactive">
                 <div class="content">
-                    <span class="title">Inactive Window</span>
+                    <div class="title">
+                        <div>Inactive Window</div>
+                        <div class="window-controls">
+                            <div class="min"></div>
+                            <div class="max"></div>
+                            <div class="close"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="active">
                 <div class="content">
-                    <span class="title">Active Window</span>
+                    <div class="title">
+                        <div>Active Window</div>
+                        <div class="window-controls">
+                            <div class="min"></div>
+                            <div class="max"></div>
+                            <div class="close"></div>
+                        </div>
+                    </div>
                     <ul class="menu">
                         <li>Normal</li>
                         <li class="disabled">Disabled</li>
@@ -202,7 +234,12 @@
             </div>
             <div class="message">
                 <div class="content">
-                    <span class="title">Message Box</span>
+                    <div class="title">
+                        <div>Message Box</div>
+                        <div class="window-controls">
+                            <div class="close"></div>
+                        </div>
+                    </div>
                     <span class="text">Message Text</span>
                     <span class="button">OK</span>
                 </div>
