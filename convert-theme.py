@@ -42,6 +42,7 @@ wallpaper = ''
 computer_icon = ''
 network_icon = ''
 bin_icon = ''
+bin_full_icon = ''
 
 colors = {
     'Hilight': '',
@@ -80,6 +81,9 @@ for line in theme.split('\n'):
     if line.startswith('empty='):
         bin_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
 
+    if line.startswith('full='):
+        bin_full_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
+
     # Loop through colors and find a match.
     for key in colors:
         if line.startswith(key + '='):
@@ -97,6 +101,10 @@ os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
 # Copy the Recycle Bin icon to the images directory.
 if bin_icon:
     os.system('cp "' + bin_icon + '" images/bin.ico')
+
+# Copy the Full Recycle Bin icon to the images directory.
+if bin_full_icon:
+    os.system('cp "' + bin_full_icon + '" images/bin_full.ico')
 
 # Copy the My Computer icon to the images directory.
 if computer_icon:
