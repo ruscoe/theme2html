@@ -60,6 +60,7 @@ colors = {
     'ButtonFace': '',
     'ButtonShadow': '',
     'ButtonHilight': '',
+    'ButtonText': '',
     'GrayText': '',
 }
 
