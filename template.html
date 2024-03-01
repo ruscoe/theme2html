@@ -107,13 +107,27 @@
             color: %HilightText%;
         }
 
-        #windows .active .text {
+        #windows .active .textarea {
             background-color: %Window%;
             border-left: 2px solid %WindowFrame%;
             border-top: 2px solid %WindowFrame%;
-            color: %WindowText%;
             height: 230px;
+        }
+
+        #windows .active .textarea {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #windows .active .text {
+            color: %WindowText%;
             padding: 8px;
+        }
+
+        #windows .active .textarea .scrollbar {
+            background-color: %Scrollbar%;
+            position: relative;
+            width: 20px;
         }
 
         #windows .inactive {
@@ -257,8 +271,14 @@
                         <li class="disabled">Disabled</li>
                         <li class="selected">Selected</li>
                     </ul>
-                    <div class="text">
-                        Window Text
+                    <div class="textarea">
+                        <div class="text">
+                            Window Text
+                        </div>
+                        <div class="scrollbar">
+                            <div class="up"></div>
+                            <div class="down"></div>
+                        </div>
                     </div>
                 </div>
             </div>

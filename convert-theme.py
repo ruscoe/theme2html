@@ -62,6 +62,7 @@ colors = {
     'ButtonHilight': '',
     'ButtonText': '',
     'GrayText': '',
+    'Scrollbar': '',
 }
 
 next_line_is_computer_icon = False
