@@ -181,14 +181,44 @@
         }
 
         #windows .window-controls div {
+            align-items: center;
             background-color: %ButtonFace%;
             border-bottom: 2px solid %ButtonShadow%;
             border-left: 2px solid %ButtonHilight%;
             border-right: 2px solid %ButtonShadow%;
             border-top: 2px solid %ButtonHilight%;
+            display: flex;
             height: 24px;
             margin: 0 1px 0 1px;
             width: 24px;
+        }
+
+        #windows .window-controls .min span {
+            border: solid %ActiveTitle%;
+            border-width: 0 0 4px 0;
+            display: block;
+            height: 14px;
+            margin: 0 auto 0 auto;
+            width: 14px;
+        }
+
+        #windows .window-controls .max span {
+            border: solid %ActiveTitle%;
+            border-width: 4px 2px 2px 2px;
+            display: block;
+            height: 12px;
+            margin: 0 auto 0 auto;
+            width: 14px;
+        }
+
+        #windows .window-controls .close {
+            position: relative;
+        }
+
+        #windows .window-controls .close span::after {
+            color: %ActiveTitle%;
+            content: "\D7";
+            font-size: 40px;
         }
     </style>
 </head>
@@ -205,9 +235,9 @@
                     <div class="title">
                         <div>Inactive Window</div>
                         <div class="window-controls">
-                            <div class="min"></div>
-                            <div class="max"></div>
-                            <div class="close"></div>
+                            <div class="min"><span></span></div>
+                            <div class="max"><span></span></div>
+                            <div class="close"><span></span></div>
                         </div>
                     </div>
                 </div>
@@ -217,9 +247,9 @@
                     <div class="title">
                         <div>Active Window</div>
                         <div class="window-controls">
-                            <div class="min"></div>
-                            <div class="max"></div>
-                            <div class="close"></div>
+                            <div class="min"><span></span></div>
+                            <div class="max"><span></span></div>
+                            <div class="close"><span></span></div>
                         </div>
                     </div>
                     <ul class="menu">
@@ -237,7 +267,7 @@
                     <div class="title">
                         <div>Message Box</div>
                         <div class="window-controls">
-                            <div class="close"></div>
+                            <div class="close"><span></span></div>
                         </div>
                     </div>
                     <span class="text">Message Text</span>
