@@ -130,6 +130,39 @@
             width: 20px;
         }
 
+        #windows .active .textarea .scrollbar div {
+            align-items: center;
+            background-color: %ButtonFace%;
+            border-bottom: 2px solid %ButtonShadow%;
+            border-left: 2px solid %ButtonHilight%;
+            border-right: 2px solid %ButtonShadow%;
+            border-top: 2px solid %ButtonHilight%;
+            display: flex;
+            position: absolute;
+            height: 16px;
+            width: 16px;
+        }
+
+        #windows .active .textarea .scrollbar .up {
+            top: 0;
+        }
+
+        #windows .active .textarea .scrollbar .up::after {
+            color: %ButtonText%;
+            content: "\25B2";
+            font-size: 16px;
+        }
+
+        #windows .active .textarea .scrollbar .down {
+            bottom: 0;
+        }
+
+        #windows .active .textarea .scrollbar .down::after {
+            color: %ButtonText%;
+            content: "\25BC";
+            font-size: 16px;
+        }
+
         #windows .inactive {
             background-color: %Menu%;
             top: 50px;
