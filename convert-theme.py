@@ -65,15 +65,14 @@ colors = {
     'Scrollbar': '',
 }
 
-next_line_is_computer_icon = False
-next_line_is_network_icon = False
+previous_line = ''
 
 for line in theme.split('\n'):
-    if next_line_is_computer_icon:
+    if previous_line.startswith('[CLSID\{20D04FE0-3AEA-1069-A2D8'):
         computer_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
         next_line_is_computer_icon = False
 
-    if next_line_is_network_icon:
+    if previous_line.startswith('[CLSID\{208D2C60-3AEA-1069-A2D7'):
         network_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
         next_line_is_network_icon = False
 
@@ -91,11 +90,7 @@ for line in theme.split('\n'):
         if line.startswith(key + '='):
             colors[key] = rgbToHex(line.split('=')[1])
 
-    if line.startswith('[CLSID\{20D04FE0-3AEA-1069-A2D8'):
-        next_line_is_computer_icon = True
-
-    if line.startswith('[CLSID\{208D2C60-3AEA-1069-A2D7'):
-        next_line_is_network_icon = True
+    previous_line = line
 
 # Copy the wallpaper to the images directory.
 os.system('cp "' + wallpaper + '" images/wallpaper.jpg')
