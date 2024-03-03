@@ -2,29 +2,26 @@
 
 Converts a Microsoft Plus desktop theme into a HTML page.
 
-![theme2html](https://github.com/ruscoe/theme2html/assets/87952/71d11332-c8b3-4f35-b013-6743b8d80fe0)
+![theme2html](https://github.com/ruscoe/theme2html/assets/87952/26bfe315-1f20-439e-80ec-1d007026c9cf)
 
 ## Demo
 
 Live demos:
 
-* [Inside Your Computer](https://ruscoe.org/theme2html/inside)
 * [Mystery](https://ruscoe.org/theme2html/mystery/)
 * [OS2 Warp](https://ruscoe.org/theme2html/os2/)
 
 ## Usage
 
 Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes).
-[This OS2 Warp theme](https://archive.org/details/theme_os2_warp_202005) works well.
-[Inside Your Computer](https://archive.org/details/inside_201808) is a good one,
-just make sure you note the caveats below.
+[Mystery](https://archive.org/details/mystery_202005) works well.
 
 Extract the .Theme file and its associated directory somewhere locally. It should
 look similar to this:
 
 ```
-'Inside Your Computer'
-'Inside your Computer (16 bit).Theme'
+Mystery
+Mystery (16 bit).Theme
 ```
 
 Assuming you extracted those files to a directory named `theme`, you can then run
@@ -57,8 +54,8 @@ Linux does, however. If you have a .Theme file that contains lower case paths an
 the files are in upper case directories, you'll have to modify the .Theme file
 before running the converter.
 
-For example, in the "Inside Your Computer" desktop theme that ships with Microsoft
-Plus, the wallpaper path is given as:
+For example, in the "[Inside Your Computer](https://archive.org/details/inside_201808)"
+desktop theme that ships with Microsoft Plus, the wallpaper path is given as:
 
 `%ThemeDir%Inside your Computer\Inside your Computer Wallpaper.jpg`
 
@@ -74,6 +71,7 @@ running the conversion script.
 * This script will not work if the .Theme file is in the same directory as the theme assets.
 * This script has only been tested with Python 3.10.12 on Ubuntu Linux.
 * Fonts haven't been implemented yet.
+* Sounds haven't been implemented yet.
 
 ## License
 
