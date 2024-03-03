@@ -70,11 +70,9 @@ previous_line = ''
 for line in theme.split('\n'):
     if previous_line.startswith('[CLSID\{20D04FE0-3AEA-1069-A2D8'):
         computer_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
-        next_line_is_computer_icon = False
 
     if previous_line.startswith('[CLSID\{208D2C60-3AEA-1069-A2D7'):
         network_icon = cleanUpThemePath(line.split('=')[1].replace(',0', ''))
-        next_line_is_network_icon = False
 
     if line.startswith('Wallpaper='):
         wallpaper = cleanUpThemePath(line.split('=')[1])
