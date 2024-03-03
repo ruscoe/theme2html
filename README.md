@@ -14,7 +14,7 @@ Live demos:
 ## Usage
 
 Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes).
-[Mystery](https://ruscoe.org/theme2html/mystery/) works well.
+[Mystery](https://archive.org/details/mystery_202005) works well.
 
 Extract the .Theme file and its associated directory somewhere locally. It should
 look similar to this:
