@@ -37,6 +37,10 @@ with open(args.path + '/' + theme_filename, encoding='utf8', errors='ignore') as
 if not os.path.exists('images'):
     os.makedirs('images')
 
+# Create a sounds directory.
+if not os.path.exists('sounds'):
+    os.makedirs('sounds')
+
 # Parse the theme variables.
 wallpaper = ''
 computer_icon = ''
@@ -65,6 +69,11 @@ colors = {
     'Scrollbar': '',
 }
 
+sounds = {
+    'Default': '[AppEvents\Schemes\Apps\.Default\.Default',
+    'AppGPFault': '[AppEvents\Schemes\Apps\.Default\AppGPFault',
+}
+
 previous_line = ''
 
 for line in theme.split('\n'):
@@ -87,6 +96,12 @@ for line in theme.split('\n'):
     for key in colors:
         if line.startswith(key + '='):
             colors[key] = rgbToHex(line.split('=')[1])
+
+    # Loop through sounds and find a match.
+    for key in sounds:
+        if previous_line.startswith(sounds[key]):
+            sound_path = cleanUpThemePath(line.split('=')[1])
+            os.system('cp "' + sound_path + '" sounds/' + key + '.wav')
 
     previous_line = line
 
