@@ -2,7 +2,7 @@
 
 Converts a Microsoft Plus desktop theme into a HTML page.
 
-![theme2html](https://github.com/ruscoe/theme2html/assets/87952/71d11332-c8b3-4f35-b013-6743b8d80fe0)
+![theme2html](https://github.com/ruscoe/theme2html/assets/87952/26bfe315-1f20-439e-80ec-1d007026c9cf)
 
 ## Demo
 
