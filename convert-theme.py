@@ -101,7 +101,8 @@ for line in theme.split('\n'):
     for key in sounds:
         if previous_line.startswith(sounds[key]):
             sound_path = cleanUpThemePath(line.split('=')[1])
-            os.system('cp "' + sound_path + '" sounds/' + key + '.wav')
+            # Convert the WAV file to MP3.
+            os.system('lame "' + sound_path + '" sounds/' + key + '.mp3')
 
     previous_line = line
 
