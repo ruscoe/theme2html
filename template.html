@@ -218,6 +218,10 @@
             text-align: center;
         }
 
+        #windows #sounds {
+            top: 500px;
+        }
+
         #windows .title {
             display: flex;
             justify-content: space-between;
@@ -326,6 +330,29 @@
                     </div>
                     <span class="text">Message Text</span>
                     <span class="button">OK</span>
+                </div>
+            </div>
+            <div id="sounds" class="active">
+                <div class="content">
+                    <div class="title">
+                        <div>Sounds</div>
+                        <div class="window-controls">
+                            <div class="min"><span></span></div>
+                            <div class="max"><span></span></div>
+                            <div class="close"><span></span></div>
+                        </div>
+                    </div>
+                    <div class="textarea">
+                        <div class="text">
+                            <ul>
+                            <li><a href="#" onclick="new Audio('./sounds/Default.mp3').play();">Default Sound</a></li>
+                            </ul>
+                        </div>
+                        <div class="scrollbar">
+                            <div class="up"></div>
+                            <div class="down"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
