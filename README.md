@@ -71,7 +71,7 @@ running the conversion script.
 * This script will not work if the .Theme file is in the same directory as the theme assets.
 * This script has only been tested with Python 3.10.12 on Ubuntu Linux.
 * Fonts haven't been implemented yet.
-* Sounds haven't been implemented yet.
+* Sounds haven't been implemented yet (see the [sounds branch](https://github.com/ruscoe/theme2html/tree/sounds)).
 
 ## License
 
