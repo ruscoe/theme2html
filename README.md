@@ -11,6 +11,10 @@ Live demos:
 * [Mystery](https://ruscoe.org/theme2html/mystery/)
 * [OS2 Warp](https://ruscoe.org/theme2html/os2/)
 
+## Optional requirement
+
+[Lame](https://lame.sourceforge.io/) for converting WAV files to MP3.
+
 ## Usage
 
 Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes).
@@ -31,6 +35,10 @@ the following:
 
 This will create a HTML file named `output.html`. Open this file in your web browser
 to see the results of your desktop theme conversion.
+
+To enable sounds, pass the `-s` flag. For example:
+
+`python3 convert-theme.py -s -p theme > output.html`
 
 ## Tested themes
 
