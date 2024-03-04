@@ -20,6 +20,7 @@ def cleanUpThemePath(path):
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-p', '--path', type=str, required=True, help='the path containing the .Theme file')
+parser.add_argument('-s', '--sounds', action=argparse.BooleanOptionalAction)
 
 args = parser.parse_args()
 
@@ -37,9 +38,10 @@ with open(args.path + '/' + theme_filename, encoding='utf8', errors='ignore') as
 if not os.path.exists('images'):
     os.makedirs('images')
 
-# Create a sounds directory.
-if not os.path.exists('sounds'):
-    os.makedirs('sounds')
+if (args.sounds):
+    # Create a sounds directory.
+    if not os.path.exists('sounds'):
+        os.makedirs('sounds')
 
 # Parse the theme variables.
 wallpaper = ''
@@ -97,12 +99,13 @@ for line in theme.split('\n'):
         if line.startswith(key + '='):
             colors[key] = rgbToHex(line.split('=')[1])
 
-    # Loop through sounds and find a match.
-    for key in sounds:
-        if previous_line.startswith(sounds[key]):
-            sound_path = cleanUpThemePath(line.split('=')[1])
-            # Convert the WAV file to MP3.
-            os.system('lame "' + sound_path + '" sounds/' + key + '.mp3')
+    if (args.sounds):
+        # Loop through sounds and find a match.
+        for key in sounds:
+            if previous_line.startswith(sounds[key]):
+                sound_path = cleanUpThemePath(line.split('=')[1])
+                # Convert the WAV file to MP3.
+                os.system('lame "' + sound_path + '" sounds/' + key + '.mp3')
 
     previous_line = line
 
