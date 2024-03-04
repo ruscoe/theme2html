@@ -74,6 +74,20 @@ colors = {
 sounds = {
     'Default': '[AppEvents\Schemes\Apps\.Default\.Default',
     'AppGPFault': '[AppEvents\Schemes\Apps\.Default\AppGPFault',
+    'Maximize' : '[AppEvents\Schemes\Apps\.Default\Maximize',
+    'MenuCommand' : '[AppEvents\Schemes\Apps\.Default\MenuCommand',
+    'MenuPopup' : '[AppEvents\Schemes\Apps\.Default\MenuPopup',
+    'Minimize' : '[AppEvents\Schemes\Apps\.Default\Minimize',
+    'RestoreDown' : '[AppEvents\Schemes\Apps\.Default\RestoreDown',
+    'RestoreUp' : '[AppEvents\Schemes\Apps\.Default\RestoreUp',
+    'SystemAsterisk' : '[AppEvents\Schemes\Apps\.Default\SystemAsterisk',
+    'SystemDefault' : '[AppEvents\Schemes\Apps\.Default\SystemDefault',
+    'SystemExclamation' : '[AppEvents\Schemes\Apps\.Default\SystemExclamation',
+    'SystemExit' : '[AppEvents\Schemes\Apps\.Default\SystemExit',
+    'SystemHand' : '[AppEvents\Schemes\Apps\.Default\SystemHand',
+    'SystemQuestion' : '[AppEvents\Schemes\Apps\.Default\SystemQuestion',
+    'SystemStart' : '[AppEvents\Schemes\Apps\.Default\SystemStart',
+    'EmptyRecycleBin' : '[AppEvents\Schemes\Apps\Explorer\EmptyRecycleBin',
 }
 
 previous_line = ''
