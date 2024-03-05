@@ -9,6 +9,7 @@ Converts a Microsoft Plus desktop theme into a HTML page.
 Live demos:
 
 * [Mystery](https://ruscoe.org/theme2html/mystery/)
+* [Mystery (with sounds)](https://ruscoe.org/theme2html/mystery-sounds/)
 * [OS2 Warp](https://ruscoe.org/theme2html/os2/)
 
 ## Optional requirement
