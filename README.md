@@ -12,7 +12,7 @@ Live demos:
 * [Mystery (with sounds)](https://ruscoe.org/theme2html/mystery-sounds/)
 * [OS2 Warp](https://ruscoe.org/theme2html/os2/)
 
-## Optional requirement
+## Optional dependency
 
 [Lame](https://lame.sourceforge.io/) for converting WAV files to MP3.
 
