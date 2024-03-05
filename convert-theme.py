@@ -146,7 +146,7 @@ if network_icon:
 with open('template.html', 'r') as template_file:
     template = template_file.read()
 
-    template = template.replace('%title%', theme_filename.replace('.Theme', ''))
+    template = template.replace('%Title%', theme_filename.replace('.Theme', ''))
 
     template = template.replace('%SoundsDisplay%', 'block' if args.sounds else 'none')
 
