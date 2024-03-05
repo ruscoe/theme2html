@@ -148,6 +148,8 @@ with open('template.html', 'r') as template_file:
 
     template = template.replace('%title%', theme_filename.replace('.Theme', ''))
 
+    template = template.replace('%SoundsDisplay%', 'block' if args.sounds else 'none')
+
     for key in colors:
         template = template.replace('%' + key + '%', colors[key])
 
