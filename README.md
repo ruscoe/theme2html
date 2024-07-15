@@ -22,6 +22,8 @@ Download a [desktop theme from Archive.org](https://archive.org/details/windowsd
 Extract the .Theme file and its associated directory somewhere locally. For example,
 extract to `~/mystery-theme`.
 
+Then run the following:
+
 `python3 convert-theme.py -p ~/mystery-theme > output.html`
 
 This will create a HTML file named `output.html`. Open this file in your web browser
