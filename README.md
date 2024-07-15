@@ -4,9 +4,7 @@ Converts a Microsoft Plus desktop theme into a HTML page.
 
 ![theme2html](https://github.com/ruscoe/theme2html/assets/87952/26bfe315-1f20-439e-80ec-1d007026c9cf)
 
-## Demo
-
-Live demos:
+## Live demos
 
 * [Mystery](https://ruscoe.org/theme2html/mystery/)
 * [Mystery (with sounds)](https://ruscoe.org/theme2html/mystery-sounds/)
@@ -21,25 +19,17 @@ Live demos:
 Download a [desktop theme from Archive.org](https://archive.org/details/windowsdesktopthemes).
 [Mystery](https://archive.org/details/mystery_202005) works well.
 
-Extract the .Theme file and its associated directory somewhere locally. It should
-look similar to this:
+Extract the .Theme file and its associated directory somewhere locally. For example,
+extract to `~/mystery-theme`.
 
-```
-Mystery
-Mystery (16 bit).Theme
-```
-
-Assuming you extracted those files to a directory named `theme`, you can then run
-the following:
-
-`python3 convert-theme.py -p theme > output.html`
+`python3 convert-theme.py -p ~/mystery-theme > output.html`
 
 This will create a HTML file named `output.html`. Open this file in your web browser
 to see the results of your desktop theme conversion.
 
 To enable sounds, pass the `-s` flag. For example:
 
-`python3 convert-theme.py -s -p theme > output.html`
+`python3 convert-theme.py -s -p ~/mystery-theme > output.html`
 
 ## Tested themes
 
@@ -59,9 +49,10 @@ To enable sounds, pass the `-s` flag. For example:
 ### Capitalization in file paths
 
 In 1995, Windows apparently did not care about capitalization in file paths.
-Linux does, however. If you have a .Theme file that contains lower case paths and
-the files are in upper case directories, you'll have to modify the .Theme file
-before running the converter.
+Modern operating systems do, however.
+
+If you have a .Theme file that contains lower case paths and the files are in upper
+case directories, you'll have to modify the .Theme file before running the converter.
 
 For example, in the "[Inside Your Computer](https://archive.org/details/inside_201808)"
 desktop theme that ships with Microsoft Plus, the wallpaper path is given as:
